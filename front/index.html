@@ -1,0 +1,24 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty API</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header-top">
+    <div id="pagination" class="pagination">
+      <img src="./img/randm.png" alt="logo"/>
+    </div>
+  </header >
+  
+  <label for="characterName">Busca un personaje por nombre: </label>
+  <input type="text" id="characterName" name="characterName"/>
+  <button onclick="getCharacter()" id="searchBtn">Buscar</button>
+  <a id="link-characters" onclick="characters()">Ver todos los personajes</a>
+  <ul id="character-list"></ul>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>
