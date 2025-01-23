@@ -34,12 +34,14 @@ const characters = async () => {
 }
 
 const getCharacter = async () => {
-    const inputValue = searchInput.value.toLowerCase();
+    const inputValue = searchInput.value;
     
     try {
         const response = await fetch(`http://localhost:3000/characters/${inputValue}`);
         const character =  await response.json();
-        //console.log(character);
+        //console.log(inputValue);
+
+        character.forEach(character => {
 
             charactersList.innerHTML += `
                 <div class='character-div'>
@@ -51,8 +53,9 @@ const getCharacter = async () => {
                     <li><span>Origin: </span>${character.originName}</li>
                 </div>
             `
+        })
     } catch (error) {
-        charactersList.innerHTML = '<li>Error al obtener información</li>'
+        charactersList.innerHTML = '<li>Error al obtener el personaje</li>'
     }
 }
 
@@ -60,12 +63,7 @@ window.addEventListener("load", () => {
     characters();
   });
 
-  searchButton.addEventListener('click', () => {
-    charactersList.innerHTML = ' ';
-    
-  })
+searchButton.addEventListener('click', () => {
+    charactersList.innerHTML = ' ';   
+})
 
-  linkCharacters.addEventListener('click', () => {
-    charactersList.innerHTML = ' ';
-    
-  })
