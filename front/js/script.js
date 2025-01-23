@@ -67,3 +67,7 @@ searchButton.addEventListener('click', () => {
     charactersList.innerHTML = ' ';   
 })
 
+linkCharacters.addEventListener('click', () => {
+    charactersList.innerHTML = ' ';   
+})
+
